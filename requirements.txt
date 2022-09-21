@@ -1,6 +1,7 @@
 absl-py==1.2.0
 anyio==3.6.1
 astunparse==1.6.3
+black==22.8.0
 cachetools==5.2.0
 certifi==2022.9.14
 charset-normalizer==2.1.1
@@ -24,11 +25,14 @@ Keras-Preprocessing==1.1.2
 libclang==14.0.6
 Markdown==3.4.1
 MarkupSafe==2.1.1
+mypy-extensions==0.4.3
 numpy==1.23.3
 oauthlib==3.2.1
 opt-einsum==3.3.0
 packaging==21.3
 pandas==1.4.4
+pathspec==0.10.1
+platformdirs==2.5.2
 protobuf==3.19.5
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
@@ -53,6 +57,7 @@ tensorflow-estimator==2.10.0
 tensorflow-io-gcs-filesystem==0.27.0
 termcolor==2.0.1
 tokenizers==0.12.1
+tomli==2.0.1
 torch==1.12.1
 tqdm==4.64.1
 transformers==4.22.0

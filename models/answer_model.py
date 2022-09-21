@@ -2,6 +2,7 @@ from pydantic import BaseModel
 
 from .note_model import Transform
 
+
 class Answer(BaseModel):
     score: float
     start: int
