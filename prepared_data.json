@@ -1,0 +1,77 @@
+[
+  {
+    "identifier": "00001",
+    "description": "The extruder is used to extrude and is located on the blue table",
+    "info": {
+      "position": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      0,
+      63
+    ]
+  },
+  {
+    "identifier": "00002",
+    "description": "The melter is used to melt and is located on the red wardrobe",
+    "info": {
+      "position": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      65,
+      125
+    ]
+  },
+  {
+    "identifier": "00003",
+    "description": "The computer is used to compute algorithms and is located on the laboratory",
+    "info": {
+      "position": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      127,
+      201
+    ]
+  }
+]
