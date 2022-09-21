@@ -26,16 +26,21 @@ class Vec3(BaseModel):
     y: float
     z: float
 
+
 class Transform(BaseModel):
     position: Vec3
     rotation: Vec3
     scale: Vec3
 
+
 class Note(BaseModel):
     identifier: str
     description: str
     info: Transform
-    description_index: tuple[int, int] = (-1,-1)
+    description_index: tuple[int, int] = (
+        -1,
+        -1,
+    )
 ```
 
 ### Question model
@@ -53,6 +58,8 @@ class Answer(BaseModel):
     start: int
     end: int
     answer: str
+    note_transform_info: Transform = None
+    note_identifier: int = -1
 ```
 
 ## To run the server
