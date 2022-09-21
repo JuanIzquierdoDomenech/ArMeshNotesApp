@@ -6,13 +6,16 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, PlainTextResponse
 
 import utils.load_model as lm
+import utils.files as files
 from models.note_model import Note
 from models.question_model import Question
 from models.answer_model import Answer
-import utils.files as files
 
 app = FastAPI()
-_model = {'model': ''}
+_model_data = {
+    'model': '', 
+    'notes': ''
+    }
 
 @app.get("/")
 def read_root(response_class=HTMLResponse) -> HTMLResponse:
@@ -50,16 +53,35 @@ async def create_note(note: Note) -> Note:
 
 @app.get("/train/", response_class=PlainTextResponse)
 async def train_model() -> PlainTextResponse:
-    lm.prepare_data()                       # Creates new file with prepared data for transformers, and clears raw_data.json
-    lm.write_descriptions()                 # Writes all descriptions in a new file (using \n )
+    # Creates new file with prepared data for transformers, and clears raw_data.json
+    # and retreives the notes from the system
+    _model_data['notes'] = lm.prepare_data()    
+
+    # Writes all descriptions in a new file (using \n) for transformer context
+    lm.write_descriptions()
     
-    _model['model'] = lm.prepare_model()    # Retrieve partially applied model (has the "context", but needs the "question")
+    # Retrieve model, partially applied (has the "context", but needs the "question")
+    _model_data['model'] = lm.prepare_model()   
+
     return "Model ready!"
 
 
 @app.post("/ask/")
 async def ask_question(question: Question) -> Answer:
     # answer = qa_model(question=question.question)
-    answer: dict = _model['model'](question=question.question)
-    result = parse_obj_as(Answer, answer)
-    return result
+    answer_dict: dict = _model_data['model'](question=question.question)
+    answer: Answer = parse_obj_as(Answer, answer_dict)
+
+    # Look for the Note relative to this element of interest, using the index of the response and the index of every note
+    # Answer has 'start' and 'end' properties
+    all_notes: list[Note] = _model_data['notes']
+    the_note: Note = next(
+        filter(
+            lambda note: answer.start >= note.description_index[0] and answer.end-1 <= note.description_index[1], all_notes),
+            None)
+
+    # Add missing info to respnse (the transform and the identifier)
+    answer.note_transform_info = the_note.info
+    answer.note_identifier = the_note.identifier
+
+    return answer

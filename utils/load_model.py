@@ -8,7 +8,7 @@ from transformers import pipeline
 import models.note_model as note_model
 import utils.files as files
 
-def prepare_data():
+def prepare_data() -> list[note_model.Note]:
     # Generate prepared_data.json file with all the modified entries from raw_data.json
     
     # Read NEW entries
@@ -56,7 +56,9 @@ def prepare_data():
     with open(files.RAW_FILE, mode='w', encoding='utf8') as raw_data_file:
         raw_data_file.write("[]")
 
-def write_descriptions():
+    return old_notes
+
+def write_descriptions() -> None:
      # Load old entries
     json_notes: list[str]
     with open(files.PREPARED_DATA_FILE, mode='r', encoding='utf8') as json_file:
