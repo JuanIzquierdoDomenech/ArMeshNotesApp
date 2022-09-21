@@ -70,4 +70,4 @@ The local IP could be something like 192.168.2.X
 ## To download the model
 Since the model was **too heavy** for git, execute `download_model.py`
 
-This will generate a *model* directory, which was too heavy for git
+This will generate a *transformer_qa_model* directory, too heavy for git

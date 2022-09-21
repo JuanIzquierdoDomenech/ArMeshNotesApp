@@ -18,7 +18,7 @@ def download_model():
     )
 
     qa_pipeline = pipeline(task=transformer_type, model=model, tokenizer=tokenizer)
-    qa_pipeline.save_pretrained("the_model")
+    qa_pipeline.save_pretrained("transformer_qa_model")
 
 
 if __name__ == "__main__":
