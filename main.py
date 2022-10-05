@@ -1,5 +1,7 @@
 import json
 from functools import partial
+import uuid
+from random import random
 
 from pydantic import parse_obj_as
 from fastapi import FastAPI
@@ -40,6 +42,9 @@ async def create_note(note: Note) -> Note:
     with open(files.RAW_FILE, mode="r") as raw_data_file:
         raw_data = json.load(raw_data_file)
     raw_notes = parse_obj_as(list[Note], raw_data)
+
+    # Generate new ID for note
+    note.identifier = str(uuid.uuid4())
 
     # Add new note
     raw_notes.append(note)

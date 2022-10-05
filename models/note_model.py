@@ -14,7 +14,7 @@ class Transform(BaseModel):
 
 
 class Note(BaseModel):
-    identifier: str
+    identifier: str = None
     description: str
     info: Transform
     description_index: tuple[int, int] = (

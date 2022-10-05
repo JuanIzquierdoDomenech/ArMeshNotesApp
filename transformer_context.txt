@@ -1,3 +1,0 @@
-The extruder is used to extrude and is located on the blue table
-The melter is used to melt and is located on the red wardrobe
-The computer is used to compute algorithms and is located on the laboratory
