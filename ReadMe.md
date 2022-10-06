@@ -87,11 +87,11 @@ class NormalDir(Enum):
 ```
 
 ## To run the server
-`uvicorn main:app --host 0.0.0.0 --port 80`
+`uvicorn main:app --host 0.0.0.0 --port 80` or just `python main.py`
 
 The local IP could be something like 192.168.2.X
 
 ## To download the model
-Since the model was **too heavy** for git, execute `download_model.py`
+Since the model was **too heavy** for git, execute `download_model.py` BEFORE ANYTHING ELSE
 
-This will generate a *transformer_qa_model* directory, too heavy for git
+This will generate a *transformer_qa_model* directory
