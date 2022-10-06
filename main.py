@@ -6,6 +6,7 @@ from random import random
 from pydantic import parse_obj_as
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, PlainTextResponse
+import uvicorn
 
 import utils.load_model as lm
 import utils.files as files
@@ -107,3 +108,7 @@ async def get_notes_in_rectangle(selection: AreaSelection) -> list[Note]:
     notes_in_area = area_utils.get_notes_inside_area(_model_data["notes"], selection)
 
     return notes_in_area
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=80)
