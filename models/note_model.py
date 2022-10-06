@@ -21,3 +21,7 @@ class Note(BaseModel):
         -1,
         -1,
     )  # begin and end positions of descriptions in text
+
+
+class NotesList(BaseModel):
+    notes: list[Note] = None

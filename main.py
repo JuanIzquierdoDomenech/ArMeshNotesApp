@@ -11,7 +11,7 @@ import uvicorn
 import utils.load_model as lm
 import utils.files as files
 import utils.select_area as area_utils
-from models.note_model import Note
+from models.note_model import Note, NotesList
 from models.question_model import Question
 from models.answer_model import Answer
 from models.area_selection_model import AreaSelection
@@ -103,11 +103,11 @@ async def ask_question(question: Question) -> Answer:
 
 
 @app.post("/notes_in_rectangle/")
-async def get_notes_in_rectangle(selection: AreaSelection) -> list[Note]:
+async def get_notes_in_rectangle(selection: AreaSelection) -> NotesList:
 
     notes_in_area = area_utils.get_notes_inside_area(_model_data["notes"], selection)
 
-    return notes_in_area
+    return NotesList(notes=notes_in_area)
 
 
 if __name__ == "__main__":
