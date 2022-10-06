@@ -1,1 +1,152 @@
-[]
+[
+  {
+    "identifier": "1d492677-929b-4553-9da9-829ac069cc99",
+    "description": "The board is on the table",
+    "info": {
+      "position": {
+        "x": -1.2075676918029785,
+        "y": -0.7506566047668457,
+        "z": 3.917346477508545
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scale": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      0,
+      24
+    ]
+  },
+  {
+    "identifier": "b74581ec-2d0e-469a-a6b5-16f10840d804",
+    "description": "The screen is on the table",
+    "info": {
+      "position": {
+        "x": -0.4545941948890686,
+        "y": -0.4914257526397705,
+        "z": 4.396671772003174
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scale": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      26,
+      51
+    ]
+  },
+  {
+    "identifier": "06b70cba-b6ea-41e8-8785-d4b0c4747fcb",
+    "description": "The computer is next to the screen",
+    "info": {
+      "position": {
+        "x": -0.22738632559776306,
+        "y": -0.5707974433898926,
+        "z": 4.143726825714111
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scale": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      53,
+      86
+    ]
+  },
+  {
+    "identifier": "a76364db-03af-41fa-a9f8-f86006274984",
+    "description": "The books are on the shelves",
+    "info": {
+      "position": {
+        "x": 0.34777194261550903,
+        "y": 0.23742282390594482,
+        "z": 4.4854536056518555
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scale": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      88,
+      115
+    ]
+  },
+  {
+    "identifier": "5ec33058-78e5-4a14-8aed-dc71e9fa4021",
+    "description": "There are exams on the floor",
+    "info": {
+      "position": {
+        "x": 0.5027018785476685,
+        "y": -1.11443030834198,
+        "z": 4.044218063354492
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scale": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      117,
+      144
+    ]
+  },
+  {
+    "identifier": "26f29a5d-eba4-41d4-b93f-d37046230726",
+    "description": "Alexa is inside the shelf",
+    "info": {
+      "position": {
+        "x": 0.6759853959083557,
+        "y": -0.9248580932617188,
+        "z": 4.4797282218933105
+      },
+      "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "scale": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    "description_index": [
+      146,
+      170
+    ]
+  }
+]

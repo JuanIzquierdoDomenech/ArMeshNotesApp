@@ -14,6 +14,7 @@ This server uses PyEnv y VirtualEnv, so make sure you create a virtual environme
 | POST /note/ | This request takes adds the new AR note (see model description below) into the system, and returns the inserted Note |
 | GET /train/ | This request starts the process to obtain a transformer, ready for making QA requests, and returns a PlainTextResponse |
 | POST /ask/  | This request takes a Question and returns an Answer (see models below) |
+| POST /notes_in_rectangle/ | TODO: Takes an AreaSelection and returns the notes within it, with a certain tolerance depending on the plane |
 
 
 This is the structure of the models, using Pydantic:
@@ -60,6 +61,26 @@ class Answer(BaseModel):
     answer: str
     note_transform_info: Transform = None
     note_identifier: int = -1
+```
+
+### AreaSelection model
+
+```python
+class AreaSelection(BaseModel):
+    begin: Vec3
+    end: Vec3
+    tolerance: float
+    normalDir: str
+
+
+class NormalDir(Enum):
+    NONE = 0
+    POSITIVE_X = 1
+    POSITIVE_Y = 2
+    POSITIVE_Z = 3
+    NEGATIVE_X = 4
+    NEGATIVE_Y = 5
+    NEGATIVE_Z = 6
 ```
 
 ## To run the server
